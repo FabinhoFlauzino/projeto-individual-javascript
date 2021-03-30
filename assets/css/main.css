@@ -106,6 +106,557 @@ hr.divider {
   align-self: center;
 }
 
+.toast {
+  position: relative;
+  height: 80px;
+  width: 100%;
+  align-items: center;
+  padding: var(--space);
+  border: 1px solid transparent;
+  transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.toast .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 16px;
+  background: none;
+  border: none;
+  font-size: 32px;
+  transition: 0.3s;
+  color: var(--black-50);
+  min-width: 50px;
+  margin: 15px;
+}
+.toast .close:hover {
+  color: var(--black-75);
+}
+.toast.success {
+  color: var(--success-color);
+  border-color: var(--success-border);
+  background-color: var(--success);
+}
+.toast.danger {
+  color: var(--danger-color);
+  border-color: var(--danger-border);
+  background-color: var(--danger);
+}
+
+form {
+  flex-direction: column;
+  width: 100%;
+  padding: 0 var(--space);
+}
+form .fields {
+  flex-direction: column;
+}
+form .field {
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: var(--space);
+}
+form .field label {
+  color: var(--gray-3);
+  font-size: 14px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  transition: color 0.3s ease-in-out;
+  z-index: 2;
+}
+form .field input, form .field textarea, form .field select {
+  border: var(--gray-3) 1px solid;
+  line-height: 1.5em;
+  padding: 10px;
+  padding-top: 33px;
+  font-size: 16px;
+  color: var(--dark-0);
+  outline: none;
+  border-radius: var(--border-radius);
+  position: relative;
+  z-index: 1;
+  top: 0;
+  transition: border-color 0.3s ease-in-out;
+  width: 100%;
+  background-color: transparent;
+}
+form .field input:focus, form .field textarea:focus, form .field select:focus {
+  border-color: var(--green);
+}
+form .field input:focus + label, form .field textarea:focus + label, form .field select:focus + label {
+  color: var(--green);
+}
+form .field input[readonly], form .field textarea[readonly], form .field select[readonly] {
+  border: none;
+  color: var(--black);
+  font-weight: bold;
+  font-size: 22px;
+  text-transform: uppercase;
+  padding-bottom: 0;
+}
+form .field input[readonly] + label, form .field textarea[readonly] + label, form .field select[readonly] + label {
+  color: var(--gray-0);
+  text-transform: uppercase;
+}
+form button {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  background: transparent;
+  color: var(--black);
+  background-color: var(--green);
+  color: var(--white);
+}
+form button:hover {
+  background-color: var(--black-10);
+}
+form button:active {
+  background-color: var(--black-75);
+}
+form button:disabled {
+  opacity: 0.5;
+  cursor: no-drop;
+  background-color: var(--gray-3);
+  color: var(--dark-0);
+}
+form button:disabled:hover, form button:disabled:active {
+  background-color: var(--gray-3);
+  color: var(--dark-0);
+}
+form button:hover {
+  background-color: var(--green-hover);
+}
+form button:active {
+  background-color: var(--green-active);
+}
+
+@media (min-width: 1200px) {
+  form {
+    max-width: 400px;
+  }
+  form .fields {
+    flex-direction: row;
+  }
+  form .fields .field {
+    margin-right: var(--space);
+  }
+  form .fields .field:last-child {
+    margin-right: 0;
+  }
+  form .fields .field textarea {
+    min-height: 250px;
+  }
+  form button {
+    max-width: 340px;
+  }
+}
+header.page-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+header.page-title h1, header.page-title h2, header.page-title h3, header.page-title h4, header.page-title h5, header.page-title h6 {
+  color: var(--green);
+  margin: 0;
+  font-size: 23px;
+  font-weight: 600;
+}
+header.page-title hr {
+  width: 68px;
+  border: none;
+  border-top: 2px solid var(--red);
+  margin: 10px 0;
+}
+
+.page {
+  flex-direction: column;
+  height: calc(100vh - 140px);
+  overflow: auto;
+}
+.page aside {
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  right: 0;
+  bottom: 80px;
+  height: 50px;
+  background-color: var(--gray-12);
+  border-bottom: var(--gray-3) 1px solid;
+  flex-direction: column;
+  transition: all 0.2s ease-in-out;
+}
+.page aside header {
+  font-size: 32px;
+  color: var(--dark-0);
+  height: 130px;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.page aside section {
+  padding: 0 var(--space);
+  display: none;
+  flex: 1;
+  max-height: calc(100vh - 339px);
+  overflow-y: auto;
+}
+.page aside section table {
+  border-collapse: collapse;
+  width: 100%;
+  border-bottom: var(--gray-3) 1px solid;
+}
+.page aside section table td {
+  padding: var(--space) 0;
+  border-top: var(--gray-3) 1px solid;
+}
+.page aside section table td.price {
+  text-align: right;
+}
+.page aside footer {
+  height: 50px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space);
+  font-size: 18px;
+  color: var(--dark-0);
+}
+.page aside footer .total {
+  font-weight: bold;
+  margin-left: var(--space);
+  text-align: right;
+}
+.page aside footer button {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  background: transparent;
+  color: var(--black);
+  min-width: 50px;
+  width: 50px;
+}
+.page aside footer button:hover {
+  background-color: var(--black-10);
+}
+.page aside footer button:active {
+  background-color: var(--black-75);
+}
+.page aside footer button:disabled {
+  opacity: 0.5;
+  cursor: no-drop;
+  background-color: var(--gray-3);
+  color: var(--dark-0);
+}
+.page aside footer button:disabled:hover, .page aside footer button:disabled:active {
+  background-color: var(--gray-3);
+  color: var(--dark-0);
+}
+.page aside footer button svg {
+  transform: rotate(0deg);
+  transition: all 0.3s ease-in-out;
+}
+.page aside.open {
+  height: calc(100vh - 158px);
+}
+.page aside.open header, .page aside.open section {
+  display: flex;
+}
+.page aside.open footer button svg {
+  transform: rotate(180deg);
+}
+.page .page-title {
+  margin: var(--space);
+  width: calc(100% - calc(var(--space) * 2));
+}
+.page > header {
+  width: 100%;
+  min-height: 10px;
+  background-color: var(--black);
+  color: var(--white);
+  justify-content: center;
+  align-items: center;
+}
+.page > header h1 {
+  font-size: 23px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.page > header h1 small {
+  font-size: 14px;
+  font-weight: 600;
+  display: block;
+}
+.page > main {
+  margin-bottom: 80px;
+  flex-direction: column;
+}
+.page > main .toast {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+}
+.page > main .toast.open {
+  transform: translateY(-80px);
+}
+.page footer.fixed {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: var(--gray-12);
+  height: 80px;
+  left: 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space);
+  z-index: 4;
+}
+.page footer.fixed button, .page footer.fixed a {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  background: transparent;
+  color: var(--black);
+  background-color: var(--gray-3);
+  color: var(--gray-0);
+}
+.page footer.fixed button:hover, .page footer.fixed a:hover {
+  background-color: var(--black-10);
+}
+.page footer.fixed button:active, .page footer.fixed a:active {
+  background-color: var(--black-75);
+}
+.page footer.fixed button:disabled, .page footer.fixed a:disabled {
+  opacity: 0.5;
+  cursor: no-drop;
+  background-color: var(--gray-3);
+  color: var(--dark-0);
+}
+.page footer.fixed button:disabled:hover, .page footer.fixed button:disabled:active, .page footer.fixed a:disabled:hover, .page footer.fixed a:disabled:active {
+  background-color: var(--gray-3);
+  color: var(--dark-0);
+}
+.page footer.fixed button:hover, .page footer.fixed a:hover {
+  background-color: var(--gray-hover);
+}
+.page footer.fixed button:active, .page footer.fixed a:active {
+  background-color: var(--gray-active);
+}
+.page footer.fixed button[type=submit], .page footer.fixed a.black {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  background: transparent;
+  color: var(--black);
+  background-color: var(--black);
+  color: var(--white);
+}
+.page footer.fixed button[type=submit]:hover, .page footer.fixed a.black:hover {
+  background-color: var(--black-10);
+}
+.page footer.fixed button[type=submit]:active, .page footer.fixed a.black:active {
+  background-color: var(--black-75);
+}
+.page footer.fixed button[type=submit]:disabled, .page footer.fixed a.black:disabled {
+  opacity: 0.5;
+  cursor: no-drop;
+  background-color: var(--gray-3);
+  color: var(--dark-0);
+}
+.page footer.fixed button[type=submit]:disabled:hover, .page footer.fixed button[type=submit]:disabled:active, .page footer.fixed a.black:disabled:hover, .page footer.fixed a.black:disabled:active {
+  background-color: var(--gray-3);
+  color: var(--dark-0);
+}
+.page footer.fixed button[type=submit]:hover, .page footer.fixed a.black:hover {
+  background-color: var(--black-hover);
+}
+.page footer.fixed button[type=submit]:active, .page footer.fixed a.black:active {
+  background-color: var(--black-active);
+}
+.page.blue > header {
+  background-color: var(--blue);
+}
+.page.blue footer.fixed button[type=submit], .page.blue footer.fixed a.black {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  background: transparent;
+  color: var(--black);
+  background-color: var(--blue);
+  color: var(--white);
+}
+.page.blue footer.fixed button[type=submit]:hover, .page.blue footer.fixed a.black:hover {
+  background-color: var(--black-10);
+}
+.page.blue footer.fixed button[type=submit]:active, .page.blue footer.fixed a.black:active {
+  background-color: var(--black-75);
+}
+.page.blue footer.fixed button[type=submit]:disabled, .page.blue footer.fixed a.black:disabled {
+  opacity: 0.5;
+  cursor: no-drop;
+  background-color: var(--gray-3);
+  color: var(--dark-0);
+}
+.page.blue footer.fixed button[type=submit]:disabled:hover, .page.blue footer.fixed button[type=submit]:disabled:active, .page.blue footer.fixed a.black:disabled:hover, .page.blue footer.fixed a.black:disabled:active {
+  background-color: var(--gray-3);
+  color: var(--dark-0);
+}
+.page.blue footer.fixed button[type=submit]:hover, .page.blue footer.fixed a.black:hover {
+  background-color: var(--blue-hover);
+}
+.page.blue footer.fixed button[type=submit]:active, .page.blue footer.fixed a.black:active {
+  background-color: var(--blue-active);
+}
+.page.green > header {
+  background-color: var(--green);
+}
+.page.green footer.fixed button[type=submit], .page.green footer.fixed a.black {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  background: transparent;
+  color: var(--black);
+  background-color: var(--green);
+  color: var(--white);
+}
+.page.green footer.fixed button[type=submit]:hover, .page.green footer.fixed a.black:hover {
+  background-color: var(--black-10);
+}
+.page.green footer.fixed button[type=submit]:active, .page.green footer.fixed a.black:active {
+  background-color: var(--black-75);
+}
+.page.green footer.fixed button[type=submit]:disabled, .page.green footer.fixed a.black:disabled {
+  opacity: 0.5;
+  cursor: no-drop;
+  background-color: var(--gray-3);
+  color: var(--dark-0);
+}
+.page.green footer.fixed button[type=submit]:disabled:hover, .page.green footer.fixed button[type=submit]:disabled:active, .page.green footer.fixed a.black:disabled:hover, .page.green footer.fixed a.black:disabled:active {
+  background-color: var(--gray-3);
+  color: var(--dark-0);
+}
+.page.green footer.fixed button[type=submit]:hover, .page.green footer.fixed a.black:hover {
+  background-color: var(--green-hover);
+}
+.page.green footer.fixed button[type=submit]:active, .page.green footer.fixed a.black:active {
+  background-color: var(--green-active);
+}
+
+@media (min-width: 1200px) {
+  header.page-title h1, header.page-title h2, header.page-title h3, header.page-title h4, header.page-title h5, header.page-title h6 {
+    font-size: 30px;
+  }
+
+  .page aside, .page aside.open {
+    width: 375px;
+    height: calc(100vh - 118px);
+    bottom: 0;
+    z-index: 4;
+  }
+  .page aside header, .page aside section, .page aside.open header, .page aside.open section {
+    display: flex;
+  }
+  .page aside header, .page aside.open header {
+    height: 160px;
+  }
+  .page aside footer, .page aside.open footer {
+    height: 80px;
+  }
+  .page aside footer > div, .page aside.open footer > div {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22px;
+  }
+  .page aside footer > div .total, .page aside.open footer > div .total {
+    font-size: 29px;
+  }
+  .page aside footer button, .page aside.open footer button {
+    display: none;
+  }
+  .page > header {
+    justify-content: flex-start;
+    padding-left: 185px;
+    min-height: 160px;
+  }
+  .page > header h1 {
+    font-size: 32px;
+  }
+  .page footer.fixed {
+    justify-content: flex-start;
+  }
+  .page footer.fixed button + button, .page footer.fixed a + a, .page footer.fixed button + a, .page footer.fixed a + button {
+    margin-right: var(--space);
+  }
+  .page footer.fixed button, .page footer.fixed a {
+    order: 1;
+  }
+  .page footer.fixed button:first-child, .page footer.fixed a:first-child {
+    order: 2;
+  }
+}
 #header {
   min-width: 320px;
   width: 100%;
@@ -357,6 +908,93 @@ hr.divider {
   }
   #header .menu .footer > div {
     height: 100px;
+  }
+}
+#footer {
+  width: 100%;
+  min-width: 320px;
+  background-color: var(--dark-0);
+  position: relative;
+  flex-direction: column;
+  padding: var(--space);
+  align-items: center;
+  color: var(--gray-0);
+}
+#footer button {
+  position: absolute;
+  right: var(--space);
+  background-color: var(--gray-6);
+  box-shadow: var(--black) 0 3px 6px;
+  border: none;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  outline: none;
+  justify-content: center;
+  align-items: center;
+  top: -35px;
+  z-index: 1;
+  cursor: pointer;
+}
+#footer button:hover {
+  background-color: var(--white);
+}
+#footer .columns {
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+#footer .columns .links {
+  display: none;
+}
+#footer .columns ul {
+  margin: 0;
+  padding: 0;
+  width: 300px;
+  flex-direction: column;
+}
+#footer .columns ul li {
+  list-style: none;
+  font-size: 16px;
+  padding: 0.5em 0;
+}
+#footer .columns ul li a {
+  color: var(--gray-0);
+  text-decoration: none;
+}
+#footer .columns ul li.title {
+  font-weight: bold;
+  font-size: 20px;
+}
+#footer .columns ul li.social {
+  align-items: center;
+}
+#footer .columns ul li.social a {
+  margin-right: 1em;
+}
+#footer .columns ul li.social img {
+  height: 24px;
+}
+#footer p {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+@media (min-width: 1200px) {
+  #footer {
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 0;
+  }
+  #footer .columns {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #footer .columns .links {
+    display: flex;
+  }
+  #footer .columns ul li a:hover {
+    color: var(--white);
   }
 }
 

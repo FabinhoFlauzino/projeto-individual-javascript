@@ -92,39 +92,67 @@
         </div>
     </header>
 
+    <section class="page" id="profile">
 
-    <footer id="footer">
-        <button type="button" aria-label="Ir para o Topo">
-            <svg xmlns="http://www.w3.org/2000/svg" width="64.317" height="64.317" viewBox="0 0 64.317 64.317">
-                <path d="M0,0H64.317V64.317H0Z" fill="none" />
-                <path d="M9.779,27.858l12.3-12.274,12.3,12.274,3.779-3.779L22.079,8,6,24.079Z"
-                    transform="translate(10.079 13.439)" />
-            </svg>
-        </button>
-        <div class="columns">
-            <div>
-                <ul class="links">
-                    <li class="title">Links</li>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Serviços</a></li>
-                    <li><a href="#">Contato</a></li>
-                </ul>
-                <ul>
-                    <li class="title">Contato</li>
-                    <li>
-                        E-mail:&nbsp;<a href="mailto:support@advogados.com">support@advogados.com</a>
-                    </li>
-                    <li class="social">
-                        <a href="#"><img src="assets/images/facebook.svg" alt="Facebook" /></a>
-                        <a href="#"><img src="assets/images/twitter.svg" alt="Twitter" /></a>
-                        <a href="#"><img src="assets/images/youtube.svg" alt="Youtube" /></a>
-                        <a href="#"><img src="assets/images/instagram.svg" alt="Instagram" /></a>
-                    </li>
-                </ul>
-            </div>
-            
-        </div>
-        <p>2021 © Fabinho Flauzino. All rights reserved.</p>
-    </footer>
+        <header>
+            <h1>Editar Dados</h1>
+        </header>
+
+        <main>
+
+            <header class="page-title">
+                <h2>Dados Pessoais</h2>
+                <hr />
+            </header>
+
+            <form>
+
+                <div class="field">
+                    <input type="text" name="name" id="name" />
+                    <label for="name">Nome Completo</label>
+                </div>
+
+                <div class="field">
+                    <input type="email" name="email" id="email" />
+                    <label for="email">E-mail</label>
+                </div>
+
+                <div class="field">
+                    <input type="date" name="birth_at" id="birth_at" />
+                    <label for="birth_at">Data de Nascimento</label>
+                </div>
+
+                <div class="fields">
+
+                    <div class="field">
+                        <input type="text" name="document" id="document" />
+                        <label for="document">Documento</label>
+                    </div>
+
+                    <div class="field">
+                        <input type="tel" name="phone" id="phone" />
+                        <label for="phone">Telefone</label>
+                    </div>
+
+                </div>
+
+                <div class="toast success open">
+                    Dados salvos com sucesso!
+                    <button type="button" class="close">
+                        <span>&times;</span>
+                    </button>
+                </div>
+
+                <footer class="fixed">
+
+                    <button type="submit">Salvar</button>
+
+                </footer>
+            </form>
+
+        </main>
+
+    </section>
+   
 </body>
 </html>
