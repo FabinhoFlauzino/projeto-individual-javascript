@@ -1,0 +1,23 @@
+{
+  "name": "javascript-individual",
+  "version": "1.0.0",
+  "description": "Projeto individual realizado para o curso de Javascript da Hcode Lab",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch assets/sass/main.scss:assets/css/main.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/FabinhoFlauzino/projeto-individual-javascript.git"
+  },
+  "author": "Fabinho Flauzino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FabinhoFlauzino/projeto-individual-javascript/issues"
+  },
+  "homepage": "https://github.com/FabinhoFlauzino/projeto-individual-javascript#readme",
+  "dependencies": {
+    "sass": "^1.32.8"
+  }
+}
