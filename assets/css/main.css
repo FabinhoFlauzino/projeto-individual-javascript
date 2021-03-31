@@ -1142,5 +1142,411 @@ header.page-title hr {
     color: var(--white);
   }
 }
+.alert {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: var(--border-radius);
+  display: none;
+}
+.alert.danger {
+  color: var(--danger-color);
+  background-color: var(--danger);
+  border-color: var(--danger-border);
+}
+.alert.success {
+  color: var(--success-color);
+  background-color: var(--success);
+  border-color: var(--success-border);
+}
+
+#home {
+  flex-direction: column;
+}
+#home > header {
+  width: 100%;
+  min-width: 320px;
+  min-height: 675px;
+  height: 100vh;
+  background-image: url("../images/04.png");
+  background-size: cover;
+  background-position-x: 10%;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space);
+}
+#home > header h1 {
+  color: var(--white);
+  font-size: 60px;
+  font-weight: bold;
+  text-align: right;
+}
+#home > header p {
+  color: var(--white);
+  font-size: 24px;
+  text-align: right;
+}
+#home > header a {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  background: transparent;
+  color: var(--black);
+  border: var(--white) 2px solid;
+  color: var(--white);
+  padding: var(--space);
+}
+#home > header a:hover {
+  background-color: var(--black-10);
+}
+#home > header a:active {
+  background-color: var(--black-75);
+}
+#home > header a:disabled {
+  opacity: 0.5;
+  cursor: no-drop;
+  background-color: var(--gray-3);
+  color: var(--dark-0);
+}
+#home > header a:disabled:hover, #home > header a:disabled:active {
+  background-color: var(--gray-3);
+  color: var(--dark-0);
+}
+#home > header a:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+@media (min-width: 576px) {
+  #home > header h1 {
+    margin-top: unset;
+  }
+}
+@media (min-width: 1200px) {
+  #home {
+    margin-top: -58px;
+  }
+  #home hr {
+    top: 100px;
+  }
+  #home > header {
+    max-height: initial;
+    background-image: url("../images/04.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+#agende {
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--white);
+}
+#agende > header {
+  flex-direction: column;
+  margin: var(--space) 0;
+}
+#agende > header h2 {
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: uppercase;
+  justify-content: center;
+  text-align: center;
+  color: var(--red-dark);
+  margin-bottom: 10px;
+}
+#agende > header h2 small {
+  display: block;
+  margin: 0;
+  text-align: center;
+  font-size: 20px;
+  color: var(--gray-0);
+  font-weight: 600;
+}
+#agende .wrap {
+  flex-direction: column;
+  margin: var(--space);
+  padding: var(--space);
+}
+#agende .wrap div {
+  flex-direction: column;
+}
+#agende .wrap figure {
+  flex-direction: column;
+  margin: 0;
+}
+#agende .wrap figure picture {
+  display: flex;
+  justify-content: center;
+}
+#agende .wrap figure picture img {
+  width: 90%;
+  filter: brightness(90%);
+  transition: all 0.3s ease-in-out;
+}
+#agende .wrap figure picture img:hover {
+  transform: scale(0.9);
+}
+#agende .wrap figure figcaption h2 {
+  font-size: 24px;
+  text-align: center;
+  color: var(--red-dark);
+}
+#agende a {
+  margin: var(--space) 0;
+  height: 70px;
+  width: 240px;
+  color: var(--white);
+  background-color: var(--red);
+  border: 1px solid var(--red-dark);
+}
+#agende a:hover {
+  background-color: var(--red-dark);
+  border: 1px solid var(--red);
+}
+
+@media (min-width: 992px) {
+  #agende {
+    padding: calc(var(--space) * 2);
+  }
+  #agende > header h2 {
+    font-size: 30px;
+  }
+  #agende > header h2 small {
+    font-size: 24px;
+  }
+  #agende .wrap {
+    flex-direction: column;
+    padding: var(--space) 100px;
+  }
+  #agende .wrap div {
+    flex-direction: row;
+  }
+  #agende .wrap figure figcaption h2 {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+    margin: var(--space);
+  }
+}
+#services {
+  margin-top: var(--space);
+  flex-direction: column;
+}
+#services h2 {
+  padding: 0 var(--space);
+  margin: 0;
+  font-size: 27px;
+  font-weight: bold;
+  color: var(--dark-0);
+  text-transform: uppercase;
+  text-align: center;
+}
+#services h2 small {
+  color: var(--gray-2);
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+}
+#services > img {
+  width: 100%;
+  margin: var(--space) 0;
+}
+#services > div {
+  flex-direction: column;
+}
+#services > div a {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  background: transparent;
+  color: var(--black);
+  background-color: var(--green);
+  color: var(--white);
+  margin: 0 var(--space);
+  padding: var(--space);
+}
+#services > div a:hover {
+  background-color: var(--black-10);
+}
+#services > div a:active {
+  background-color: var(--black-75);
+}
+#services > div a:disabled {
+  opacity: 0.5;
+  cursor: no-drop;
+  background-color: var(--gray-3);
+  color: var(--dark-0);
+}
+#services > div a:disabled:hover, #services > div a:disabled:active {
+  background-color: var(--gray-3);
+  color: var(--dark-0);
+}
+#services > div a:hover {
+  background-color: var(--green-hover);
+}
+#services > div a:active {
+  background-color: var(--green-active);
+}
+#services > div .icons {
+  flex-direction: column;
+}
+#services > div .icons figure {
+  margin-top: var(--space);
+  flex-direction: column;
+  align-items: center;
+}
+#services > div .icons figure img {
+  width: 100px;
+}
+#services > div .icons figure figcaption {
+  margin: var(--space) auto;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--gray-0);
+}
+
+@media (min-width: 768px) {
+  #services > div {
+    flex-direction: column-reverse;
+  }
+  #services > div .icons {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  #services > div .icons figure {
+    margin: calc(5 * var(--space)) 0;
+  }
+  #services > div .icons figure img {
+    width: 150px;
+  }
+  #services > div a {
+    width: 300px;
+    margin: calc(3 * var(--space)) auto;
+    text-align: center;
+  }
+}
+@media (min-width: 992px) {
+  #services h2 {
+    font-size: 40px;
+  }
+  #services h2 small {
+    font-size: 25px;
+  }
+}
+#contact {
+  flex-direction: column;
+}
+#contact > h2 {
+  font-size: 27px;
+  font-weight: bold;
+  color: var(--dark-0);
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0 var(--space);
+}
+#contact p {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray-1);
+}
+#contact > section {
+  flex-direction: column;
+}
+#contact #map {
+  background-image: url("../images/mapa.png");
+  height: 263px;
+  width: 100%;
+  margin-top: var(--space);
+}
+#contact .contacts {
+  margin: 0;
+  padding: var(--space);
+  margin-top: var(--space);
+  flex-direction: column;
+}
+#contact .contacts li {
+  border: var(--gray-3) 1px solid;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space);
+  margin-bottom: calc(var(--space) * 3);
+  text-align: center;
+  color: var(--gray-1);
+}
+#contact .contacts li img {
+  max-width: 100px;
+  background-color: var(--white);
+  margin: 0 auto;
+  padding: 0 var(--space);
+}
+#contact .contacts li p {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 300;
+}
+#contact .contacts li p.title {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+@media (min-width: 992px) {
+  #contact > h2 {
+    font-size: 30px;
+  }
+  #contact > section {
+    flex-direction: row;
+  }
+  #contact > section form, #contact > section #map {
+    flex: 1;
+  }
+  #contact > section form {
+    max-width: unset;
+  }
+  #contact > section form textarea {
+    min-height: 160px;
+    resize: vertical;
+  }
+  #contact > section #map {
+    margin-left: 0;
+    height: 570px;
+  }
+  #contact .contacts {
+    flex-direction: row;
+  }
+  #contact .contacts li + li {
+    margin-left: var(--space);
+  }
+}
+@media (min-width: 1200px) {
+  #contact > section form textarea {
+    min-height: 245px;
+  }
+}
 
 /*# sourceMappingURL=main.css.map */
