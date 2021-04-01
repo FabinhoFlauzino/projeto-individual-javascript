@@ -1648,5 +1648,36 @@ header.page-title hr {
     padding-top: 100px;
   }
 }
+#change-photo form {
+  align-items: center;
+  margin-top: var(--space);
+}
+#change-photo form img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+#change-photo form #file {
+  display: none;
+}
+#change-photo form .choose-photo {
+  margin: var(--space) 0;
+  min-width: 256px;
+}
+#change-photo form.crooping img {
+  height: auto;
+  border-radius: 0;
+  margin-top: 0;
+}
+
+@media (min-width: 1200px) {
+  #change-photo form img {
+    width: 256px;
+    height: 256px;
+  }
+}
+#change-password form .page-title {
+  margin: 0;
+}
 
 /*# sourceMappingURL=main.css.map */
