@@ -2,7 +2,7 @@
     min-width: 320px;
     width: 100%;
     height: 160px;
-    background-color: var(--gray-5);
+    background-color: var(--black-10);
     position: relative;
     z-index: 5;
     .logo {
@@ -69,7 +69,7 @@
                     justify-content: center;
                     a {
                         text-decoration: none;
-                        color: var(--gray-0);
+                        color: var(--white);
                     }
                     &.hide-guest, &.divider {
                         display: none;
@@ -208,7 +208,7 @@
                             padding: 10px 0;
                             text-align: center;
                             &:hover {
-                                color: var(--black);
+                                color: var(--gray-10);
                             }
                         }
                     }

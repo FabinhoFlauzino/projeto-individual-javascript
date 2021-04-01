@@ -1,82 +1,101 @@
 #services {
-    margin-top: var(--space);
     flex-direction: column;
-    h2 {
-        padding: 0 var(--space);
-        margin: 0;
-        font-size: 27px;
-        font-weight: bold;
-        color: var(--dark-0);
-        text-transform: uppercase;
-        text-align: center;
-        small {
-            color: var(--gray-2);
-            display: block;
-            font-size: 20px;
-            font-weight: 600;
-        }
-    }
-    > img {
-        width: 100%;
-        margin: var(--space) 0;
-    }
-    > div {
+    align-items: center;
+    background-color: var(--white);
+    > header {
         flex-direction: column;
-        a {
-            @include button-green;
-            margin: 0 var(--space);
-            padding: var(--space);
-        }
-        .icons {
-            flex-direction: column;
-            figure {
-                margin-top: var(--space);
-                flex-direction: column;
-                align-items: center;
-                img {
-                    width: 100px;
-                }
-                figcaption {
-                    margin: var(--space) auto;
-                    font-size: 16px;
-                    font-weight: bold;
-                    color: var(--gray-0);
-                }
+        margin: var(--space) 0;
+        h2 {
+            font-size: 22px;
+            font-weight: bold;
+            text-transform: uppercase;
+            justify-content: center;
+            text-align: center;
+            color: var(--red-dark);
+            margin-bottom: 10px;
+            small {
+                display: block;
+                margin: 0;
+                text-align: center;
+                font-size: 20px;
+                color: var(--gray-0);
+                font-weight: 600;
             }
         }
     }
-}
-
-@media (min-width: 768px) {
-    #services {
-        > div {
-            flex-direction: column-reverse;
-            .icons {
-                flex-direction: row;
-                justify-content: space-around;
-                figure {
-                    margin: calc(5 * var(--space)) 0;
-                    img {
-                        width: 150px;
+    .wrap {
+        flex-direction: column;
+        margin: var(--space);
+        padding: var(--space);
+        div {
+            flex-direction: column;
+        }
+        figure {
+            flex-direction: column;
+            margin: 0;
+            picture {
+                display: flex;
+                justify-content: center;
+                img {
+                    width: 90%;
+                    filter: brightness(90%);
+                    transition: all 0.3s ease-in-out;
+                    &:hover {
+                        transform: scale(.9);
                     }
                 }
             }
-            a {
-                width: 300px;
-                margin: calc(3 * var(--space)) auto;
-                text-align: center;
+            figcaption {
+                h2 {
+                    font-size: 24px;
+                    text-align: center;
+                    color: var(--red-dark);
+                }
             }
+        }
+    }
+    a {
+        margin: var(--space) 0;
+        height: 70px;
+        width: 240px;
+        color: var(--white);
+        background-color: var(--red);
+        border: 1px solid var(--red-dark);
+        &:hover {
+            background-color: var(--red-dark);
+            border: 1px solid var(--red);
         }
     }
 }
 
 @media (min-width: 992px) {
     #services {
-        h2 {
-            font-size: 40px;
-            small {
-                font-size: 25px;
+        padding: calc(var(--space) * 2);
+        > header {
+            h2 {
+                font-size: 30px;
+                small {
+                    font-size: 22px;
+                }
             }
-        }
+       }
+       .wrap {
+           flex-direction: column;
+           padding: var(--space) 100px;
+           div {
+               flex-direction: row;
+           }
+           figure {
+               figcaption {
+                   h2 {
+                       font-size: 18px;
+                       text-transform: uppercase;
+                       font-weight: 600;
+                       text-align: center;
+                       margin: var(--space);
+                   }
+               }
+           }
+       }
     }
 }

@@ -1,5 +1,6 @@
 #home {
     flex-direction: column;
+    margin-top: -160px;
     > header {
         width: 100%;
         min-width: 320px;
@@ -14,16 +15,17 @@
         align-items: center;
         justify-content: center;
         padding: var(--space);
+        padding-top: 230px;
         h1 {
             color: var(--white);
             font-size: 60px;
             font-weight: bold;
-            text-align: right;
+            text-align: left;
         }
         p{
             color: var(--white);
             font-size: 24px;
-            text-align: right;
+            text-align: left;
         }
         a {
             @include button;
@@ -38,26 +40,16 @@
     }
 }
 
-@media(min-width: 576px) {
-    #home {
-        > header {
-            h1 {
-                margin-top: unset;
-            }
-        }
-    }
-}
-
 @media (min-width: 1200px) {
     #home {
-        margin-top: -58px;
+        margin-top: -265px;
         hr {
             top: 100px;
         }
         > header {
             max-height: initial;
             background-image: url('../images/04.png');
-            background-size: contain;
+            background-size: cover;
             background-repeat: no-repeat;
         }
     }
