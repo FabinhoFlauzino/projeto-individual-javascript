@@ -104,7 +104,7 @@ header {
     }
     > header {
         width: 100%;
-        min-height: 10px;
+        //min-height: 10px;
         background-color: var(--black);
         color: var(--white);
         justify-content: center;
@@ -184,7 +184,7 @@ header {
     .page {
         aside, aside.open {
             width: 375px;
-            height: calc(100vh - 118px);
+            height: calc(100vh - 100px);
             bottom: 0;
             z-index: 4;
             header, section {
