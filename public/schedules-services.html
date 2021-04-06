@@ -92,52 +92,51 @@
         </div>
     </header>
 
-    <section class="page" id="change-password">
-        
+    <section id="schedules-services" class="page">
         <header>
-            <h1>Alterar Senha</h1>
+            <h1>Escolha os Serviços</h1>
         </header>
 
         <main>
-
-            <header class="page-title">
-                <h2>Informe sua Senha</h2>
-                <hr />
-            </header>            
-
             <form>
+                <input type="hidden" name="schedule_at" />
+                <input type="hidden" name="option" />
 
-                <div class="field">
-                    <input type="password" name="password_current" id="password-current" />
-                    <label for="password-current">Senha Atual</label>
-                </div>
+                <div class="options"></div>
 
-                <header class="page-title">
-                    <h2>Crie uma Nova Senha</h2>
-                    <hr />
-                </header>
-
-                <div class="field">
-                    <input type="password" name="password_new" id="password-new" />
-                    <label for="password-new">Nova Senha</label>
-                </div>
-
-                <div class="field">
-                    <input type="password" name="password_confirm" id="password-confirm" />
-                    <label for="password-confirm">Confirme a Nova Senha</label>
-                </div>
-                
                 <footer class="fixed">
-    
-                    <button type="submit">Salvar</button>
-    
+                    <a href="javascript:history.back(-1)">Voltar</a>
+                    <button type="submit">Continuar</button>
                 </footer>
             </form>
+        </main>
 
-        </main>         
+        <aside>
+            <header>Resumo</header>
 
+            <section>
+                <table>
+                    <tbody></tbody>
+                </table>
+            </section>
+
+            <footer>
+                <button type="button" id="btn-summary-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="64.317" height="64.317" viewBox="0 0 64.317 64.317">
+                        <path d="M0,0H64.317V64.317H0Z" fill="none" />
+                        <path d="M9.779,27.858l12.3-12.274,12.3,12.274,3.779-3.779L22.079,8,6,24.079Z"
+                            transform="translate(10.079 13.439)" />
+                    </svg>
+                </button>
+
+                <div>
+                    <span>Total</span>
+                    <span class="total">R$ 0,00</span>
+                </div>
+            </footer>
+        </aside>
     </section>
-
    
+    <script src="bundle.js"></script>
 </body>
 </html>

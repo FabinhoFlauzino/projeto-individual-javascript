@@ -92,58 +92,64 @@
         </div>
     </header>
 
-    <section id="schedules-address" class="page">
+    <section id="schedules-complete" class="page">
+
         <header>
-            <h1>Endereço de Cobrança</h1>
+            <h1>Pagamento Efetuado</h1>
         </header>
 
         <main>
-            <form action="schedules-summary.html">
-                <a href="schedules-address-create.html" class="btn-create">Novo Endereço</a>
 
+            <header class="page-title">
+                <h2>Obrigado!</h2>
                 <hr />
+            </header>
 
-                <div class="addresses">
-                    <label>
-                        <div>
-                            <input type="radio" name="address" value="1" />
-                            <div class="circle">
-                                <div></div>
-                            </div>
-                            <address>
-                                <strong>Av. Paulista, 500</strong><br />
-                                Bela Vista<br />
-                                São Paulo - SP<br />
-                                01310-100
-                            </address>
-                        </div>
-                        <a href="schedules-address-update.html" class="btn-update">Editar</a>
-                    </label>
+            <p>10 de Julho de 2020</p>
+            <p>Número do Pedido: 000123<small>Cartão de Crédito final 0604</small></p>
 
-                    <label>
-                        <div>
-                            <input type="radio" name="address" value="1" />
-                            <div class="circle">
-                                <div></div>
-                            </div>
-                            <address>
-                                <strong>Av. Paulista, 500</strong><br />
-                                Bela Vista<br />
-                                São Paulo - SP<br />
-                                01310-100
-                            </address>
-                        </div>
-                        <a href="schedules-address-update.html" class="btn-update">Editar</a>
-                    </label>
+            <footer class="fixed">
+                <a href="schedules.html">Agendamentos</a>
+            </footer>
+
+        </main>
+
+        <aside>
+
+            <header>Resumo</header>
+
+            <section>
+
+                <table>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Alinhamento</td>
+                            <td class="price">R$ 0,00</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </section>
+
+            <footer>
+
+                <button type="button" id="btn-summary-toggle"><svg xmlns="http://www.w3.org/2000/svg" width="64.317" height="64.317" viewBox="0 0 64.317 64.317"><path d="M0,0H64.317V64.317H0Z" fill="none"/><path d="M9.779,27.858l12.3-12.274,12.3,12.274,3.779-3.779L22.079,8,6,24.079Z" transform="translate(10.079 13.439)"/></svg></button>
+
+                <div>
+                    <span>Total</span>
+                    <span class="total">R$ 0,00</span>
                 </div>
 
-                <footer class="fixed">
-                    <a href="schedules-payment.html">Voltar</a>
-                    <button type="submit">Continuar</button>
-                </footer>
-            </form>
-        </main>
+            </footer>
+
+        </aside>
+
     </section>
-   
+
+    <script src="bundle.js"></script>
 </body>
 </html>

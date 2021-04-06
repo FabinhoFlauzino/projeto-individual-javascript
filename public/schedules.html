@@ -92,40 +92,109 @@
         </div>
     </header>
 
-    <section class="page" id="change-photo">
+    <section id="schedules" class="page">
+
         <header>
-            <h1>Mudar Foto</h1>
+            <h1>Agendamentos</h1>
         </header>
 
         <main>
-            <form>
-                <img src="assets/images/default.png" alt="Foto Atual" id="photo-preview" />
 
-                <input type="file" name="photo" id="file" />
+            <div>
 
-                <input type="hidden" name="x" />
-                <input type="hidden" name="y" />
-                <input type="hidden" name="width" />
-                <input type="hidden" name="height" />
+                <header class="page-title">
+                    <h2>Próximos</h2>                    
+                    <hr />
+                </header>
 
-                <button type="button" class="choose-photo">
-                    Escolher Foto
-                </button>
+                <ul>
+                    <li>
+                        <section>
+                            <div>
+                                <label>Data</label>
+                                <span>02/07/2020 às 9:00</span>
+                            </div>
+                            <div>
+                                <label>Status</label>
+                                <span>Confirmado</span>
+                            </div>
+                            <div>
+                                <label>Valor</label>
+                                <span>R$ 20,00</span>
+                            </div>
+                            <div class="service">
+                                <label>Serviço</label>
+                                <span>Revisão do veículo</span>
+                            </div>
+                        </section>
+                        <button type="button" class="cancel">Cancelar</button>
+                    </li>
+                    <li>
+                        <section>
+                            <div>
+                                <label>Data</label>
+                                <span>02/07/2020 às 9:00</span>
+                            </div>
+                            <div>
+                                <label>Status</label>
+                                <span>Confirmado</span>
+                            </div>
+                            <div>
+                                <label>Valor</label>
+                                <span>R$ 20,00</span>
+                            </div>
+                            <div class="service">
+                                <label>Serviço</label>
+                                <span>Revisão do veículo</span>
+                            </div>
+                        </section>
+                        <button type="button" class="cancel">Cancelar</button>
+                    </li>
+                </ul>
 
-                <div class="toast success open">
-                    Foto alterada com sucesso!
-                    <button type="button" class="close">
-                        <span>&times;</span>
-                    </button>
-                </div>
+            </div>
 
-                <footer class="fixed">
-                    <button type="submit">Salvar</button>
-                </footer>
-            </form>
+            <div>
+
+                <header class="page-title">
+                    <h2>Histórico</h2>
+                    <hr />
+                </header>
+
+                <ul>
+                    <li>
+                        <section>
+                            <div>
+                                <label>Data</label>
+                                <span>02/07/2020 às 9:00</span>
+                            </div>
+                            <div>
+                                <label>Status</label>
+                                <span>Confirmado</span>
+                            </div>
+                            <div>
+                                <label>Valor</label>
+                                <span>R$ 20,00</span>
+                            </div>
+                            <div class="service">
+                                <label>Serviço</label>
+                                <span>Revisão do veículo</span>
+                            </div>
+                        </section>
+                        <button type="button" class="cancel">Cancelar</button>
+                    </li>
+                </ul>
+
+            </div>
+
+            <footer class="fixed">
+                <a href="schedules-new.html" class="black">Novo Agendamento</a>
+            </footer>
+
         </main>
-    </section>
 
+    </section>
    
+    <script src="bundle.js"></script>
 </body>
 </html>

@@ -92,145 +92,59 @@
         </div>
     </header>
 
-    <section id="schedules-summary" class="page">
-
+    <section id="schedules-address" class="page">
         <header>
-            <h1>Resumo do Pedido<small>Confira os detalhes do pedido</small></h1>
+            <h1>Endereço de Cobrança</h1>
         </header>
 
         <main>
+            <form action="schedules-summary.html">
+                <a href="schedules-address-create.html" class="btn-create">Novo Endereço</a>
 
-            <form action="">
+                <hr />
 
-                <div class="field">
-                    <input type="text" name="payment" id="payment" readonly value="Cartão de Crédito" />
-                    <label for="payment">Forma de Pagamento</label>
-                </div>
+                <div class="addresses">
+                    <label>
+                        <div>
+                            <input type="radio" name="address" value="1" />
+                            <div class="circle">
+                                <div></div>
+                            </div>
+                            <address>
+                                <strong>Av. Paulista, 500</strong><br />
+                                Bela Vista<br />
+                                São Paulo - SP<br />
+                                01310-100
+                            </address>
+                        </div>
+                        <a href="schedules-address-update.html" class="btn-update">Editar</a>
+                    </label>
 
-                <div class="field">
-                    <input type="text" name="creditcard" id="creditcard" readonly value="***0604" />
-                    <label for="creditcard">Cartão Final</label>
-                </div>
-
-                <div class="field">
-                    <input type="text" name="installments" id="installments" readonly value="À vista" />
-                    <label for="installments">Parcelas</label>
-                </div>
-
-                <div class="field">
-                    <input type="text" name="services" id="services" readonly value="1" />
-                    <label for="services">Quantidade de Serviços</label>
-                </div>
-
-                <div class="field">
-                    <input type="text" name="schedule_at" id="schedule_at" readonly value="01 de outubro de 2020 às 9:00" />
-                    <label for="schedule_at">Data do Serviço</label>
-                </div>
-
-                <div class="field">
-                    <input type="text" name="total" id="total" readonly value="R$ 400,00" />
-                    <label for="total">Valor Total</label>
+                    <label>
+                        <div>
+                            <input type="radio" name="address" value="1" />
+                            <div class="circle">
+                                <div></div>
+                            </div>
+                            <address>
+                                <strong>Av. Paulista, 500</strong><br />
+                                Bela Vista<br />
+                                São Paulo - SP<br />
+                                01310-100
+                            </address>
+                        </div>
+                        <a href="schedules-address-update.html" class="btn-update">Editar</a>
+                    </label>
                 </div>
 
                 <footer class="fixed">
                     <a href="schedules-payment.html">Voltar</a>
                     <button type="submit">Continuar</button>
                 </footer>
-
             </form>
-
         </main>
-
-        <aside>
-
-            <header>Resumo</header>
-
-            <section>
-
-                <table>
-
-                    <tbody>
-
-                        <tr>
-                            <td>Alinhamento</td>
-                            <td class="price">R$ 0,00</td>
-                        </tr>
-
-                        <tr>
-                            <td>Alinhamento</td>
-                            <td class="price">R$ 0,00</td>
-                        </tr>
-
-                        <tr>
-                            <td>Alinhamento</td>
-                            <td class="price">R$ 0,00</td>
-                        </tr>
-
-                        <tr>
-                            <td>Alinhamento</td>
-                            <td class="price">R$ 0,00</td>
-                        </tr>
-
-                        <tr>
-                            <td>Alinhamento</td>
-                            <td class="price">R$ 0,00</td>
-                        </tr>
-
-                        <tr>
-                            <td>Alinhamento</td>
-                            <td class="price">R$ 0,00</td>
-                        </tr>
-
-                        <tr>
-                            <td>Alinhamento</td>
-                            <td class="price">R$ 0,00</td>
-                        </tr>
-
-                        <tr>
-                            <td>Alinhamento</td>
-                            <td class="price">R$ 0,00</td>
-                        </tr>
-
-                        <tr>
-                            <td>Alinhamento</td>
-                            <td class="price">R$ 0,00</td>
-                        </tr>
-
-                        <tr>
-                            <td>Alinhamento</td>
-                            <td class="price">R$ 0,00</td>
-                        </tr>
-
-                        <tr>
-                            <td>Alinhamento</td>
-                            <td class="price">R$ 0,00</td>
-                        </tr>
-
-                        <tr>
-                            <td>Alinhamento</td>
-                            <td class="price">R$ 0,00</td>
-                        </tr>
-
-                    </tbody>
-
-                </table>
-
-            </section>
-
-            <footer>
-
-                <button type="button" id="btn-summary-toggle"><svg xmlns="http://www.w3.org/2000/svg" width="64.317" height="64.317" viewBox="0 0 64.317 64.317"><path d="M0,0H64.317V64.317H0Z" fill="none"/><path d="M9.779,27.858l12.3-12.274,12.3,12.274,3.779-3.779L22.079,8,6,24.079Z" transform="translate(10.079 13.439)"/></svg></button>
-
-                <div>
-                    <span>Total</span>
-                    <span class="total">R$ 0,00</span>
-                </div>
-
-            </footer>
-
-        </aside>
-
     </section>
    
+    <script src="bundle.js"></script>
 </body>
 </html>

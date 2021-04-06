@@ -92,108 +92,34 @@
         </div>
     </header>
 
-    <section id="schedules" class="page">
-
+    <section id="time-options" class="page">
         <header>
-            <h1>Agendamentos</h1>
+            <h1>Escolha o Horário</h1>
         </header>
 
         <main>
+            <header class="page-title">
+                <h2>Horários do Dia</h2>
+                <hr />
+            </header>
 
-            <div>
+            <form action="schedules-services.html">
+                <input type="hidden" name="schedule_at" />
 
-                <header class="page-title">
-                    <h2>Próximos</h2>                    
-                    <hr />
-                </header>
+                <h3></h3>
 
-                <ul>
-                    <li>
-                        <section>
-                            <div>
-                                <label>Data</label>
-                                <span>02/07/2020 às 9:00</span>
-                            </div>
-                            <div>
-                                <label>Status</label>
-                                <span>Confirmado</span>
-                            </div>
-                            <div>
-                                <label>Valor</label>
-                                <span>R$ 20,00</span>
-                            </div>
-                            <div class="service">
-                                <label>Serviço</label>
-                                <span>Revisão do veículo</span>
-                            </div>
-                        </section>
-                        <button type="button" class="cancel">Cancelar</button>
-                    </li>
-                    <li>
-                        <section>
-                            <div>
-                                <label>Data</label>
-                                <span>02/07/2020 às 9:00</span>
-                            </div>
-                            <div>
-                                <label>Status</label>
-                                <span>Confirmado</span>
-                            </div>
-                            <div>
-                                <label>Valor</label>
-                                <span>R$ 20,00</span>
-                            </div>
-                            <div class="service">
-                                <label>Serviço</label>
-                                <span>Revisão do veículo</span>
-                            </div>
-                        </section>
-                        <button type="button" class="cancel">Cancelar</button>
-                    </li>
-                </ul>
+                <div class="options"></div>
 
-            </div>
-
-            <div>
-
-                <header class="page-title">
-                    <h2>Histórico</h2>
-                    <hr />
-                </header>
-
-                <ul>
-                    <li>
-                        <section>
-                            <div>
-                                <label>Data</label>
-                                <span>02/07/2020 às 9:00</span>
-                            </div>
-                            <div>
-                                <label>Status</label>
-                                <span>Confirmado</span>
-                            </div>
-                            <div>
-                                <label>Valor</label>
-                                <span>R$ 20,00</span>
-                            </div>
-                            <div class="service">
-                                <label>Serviço</label>
-                                <span>Revisão do veículo</span>
-                            </div>
-                        </section>
-                        <button type="button" class="cancel">Cancelar</button>
-                    </li>
-                </ul>
-
-            </div>
-
-            <footer class="fixed">
-                <a href="schedules-new.html" class="black">Novo Agendamento</a>
-            </footer>
-
+                <footer class="fixed">
+                    <a href="javascript:history.back(-1)">Voltar</a>
+                    <button type="submit" disabled="disabled">
+                        Continuar
+                    </button>
+                </footer>
+            </form>
         </main>
-
     </section>
    
+    <script src="bundle.js"></script>
 </body>
 </html>

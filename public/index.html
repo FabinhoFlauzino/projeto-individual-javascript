@@ -92,26 +92,147 @@
         </div>
     </header>
 
-    <main id="error">
+    <main id="home">
+        <header>
+            <h1>Lutaremos Por Você</h1>
+            <p>Entre em contato conosco e te taremos toda assistência necessária</p>
+            <a href="#contact">Entrar em Contato</a>
+        </header>
 
-        <div class="columns">
-            <div class="column">
-                <header>
-                    <h1>
-                        <span class="desktop"><b>Oooops</b>&nbsp;será que está no lugar certo?</span>
-                        <span class="mobile">Problema ocorrido no <b>Celular</b>!</span>
-                    </h1>
-                </header>
-                <p>Tente novamente mais tarde ou digite um caminho válido.</p>
-            </div>
-            <div class="column">
-                <picture>
-                    <source srcset="assets/images/404.jpg" media="(min-width: 1200px)" />
-                    <img src="assets/images/404.jpg" alt="Erro" />
-                </picture>
-            </div>
-        </div>
+        <section id="agende">
+            <h2>Agende sua Consultoria<small>Como Funciona?</small></h2>
 
+            <div>
+                <div class="icons">
+                    <figure>
+                        <img src="assets/images/calendar.svg" alt="Escolha a Data e Hora" />
+                        <figcaption>Escolha a Data e Hora</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="assets/images/tools.svg" alt="Escolha o Serviço" />
+                        <figcaption>Escolha o Serviço</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="assets/images/payments.svg" alt="Pague Online" />
+                        <figcaption>Pague Online</figcaption>
+                    </figure>
+                </div>
+
+                <a href="schedules-new.html">Agendar Consultoria</a>
+            </div>
+
+            <img src="assets/images/03.png" alt="Serviços" />
+        </section>
+
+        <section id="services">
+            <header>
+                <h2>Alguns de nossos serviços
+                    <small>Venha conversar conosco</small>
+                </h2>
+            </header>
+    
+            <div class="wrap">
+                <div>
+                    <figure>
+                        <picture>
+                            <img src="assets/images/pexels-august-de-richelieu-4427544.jpg" alt="Justiça" width="auto" height="auto"/>
+                        </picture>
+                        <figcaption>
+                            <h2>Direito Trabalhista</h2>
+                        </figcaption>
+                    </figure>
+    
+                    <figure>
+                        <picture>
+                            <img src="assets/images/pexels-august-de-richelieu-4427551.jpg" alt="Justiça" width="auto" height="auto"/>
+                        </picture>
+                        <figcaption>
+                            <h2>Direito Tributario</h2>
+                        </figcaption>
+                    </figure>
+    
+                    <figure>
+                        <picture>
+                            <img src="assets/images/pexels-ekaterina-bolovtsova-6077797.jpg" alt="Justiça" width="auto" height="auto"/>
+                        </picture>
+                        <figcaption>
+                            <h2>Direito Criminal</h2>
+                        </figcaption>
+                    </figure>
+                </div>
+                
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Entre em Contato</h2>
+
+            <section>
+                <form>
+                    <header class="page-title">
+                        <h2>Formulário</h2>
+                        <hr />
+                    </header>
+
+                    <p>
+                        Envie o formulário abaixo para entrar em contato
+                        conosco.
+                    </p>
+
+                    <div class="alert danger">Preencha todos os campos</div>
+
+                    <div class="fields">
+                        <div class="field">
+                            <input type="text" name="name" id="name" />
+                            <label for="name">Nome Completo</label>
+                        </div>
+
+                        <div class="field">
+                            <input type="email" name="email" id="email" />
+                            <label for="email">E-mail</label>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <textarea name="message" id="message"></textarea>
+                        <label for="message">Mensagem</label>
+                    </div>
+
+                    <div class="actions">
+                        <button type="submit">Enviar</button>
+                    </div>
+                </form>
+
+                <div id="map"></div>
+            </section>
+
+            <hr class="divider" />
+
+            <ul class="contacts">
+                <li>
+                    <img src="assets/images/bate-papo.svg" alt="Icon" />
+                    <p class="title">Telefone</p>
+                    <p>(14) 1234-5678</p>
+                </li>
+                <li>
+                    <img src="assets/images/localizacao.svg" alt="Icon" />
+                    <p class="title">Localização</p>
+                    <p>Marília-SP</p>
+                </li>
+                <li>
+                    <img src="assets/images/o-email.svg" alt="Icon" />
+                    <p class="title">SAC</p>
+                    <p>support@advogados.com</p>
+                </li>
+                <li>
+                    <img src="assets/images/telefone.svg" alt="Icon" />
+                    <p class="title">WhatsApp</p>
+                    <p>(14) 99999-9999</p>
+                </li>
+            </ul>
+        </section>
     </main>
 
     <footer id="footer">
@@ -149,5 +270,7 @@
         </div>
         <p>2021 © Fabinho Flauzino. All rights reserved.</p>
     </footer>
+
+    <script src="bundle.js"></script>
 </body>
 </html>
