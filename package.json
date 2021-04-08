@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "sass": "sass --watch public/assets/sass/main.scss:public/assets/css/main.css",
-    "build": "sass public/assets/sass/main.scss:public/assets/css/main.css --style=compressed",
-    "prod": "webpack --mode=production",
+    "sass-build": "sass public/assets/sass/main.scss:public/assets/css/main.css --style=compressed",
+    "build": "webpack --mode=production",
     "dev": "webpack serve --content-base public --hot",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
