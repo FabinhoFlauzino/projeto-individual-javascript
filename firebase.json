@@ -6,5 +6,12 @@
       "**/.*",
       "**/node_modules/**"
     ]
-  }
+  },
+  "apiKey": "AIzaSyD5fG40_UgUd-2ri6fSsfII60H4BsKyid0",
+  "authDomain": "escritorio-advogado.firebaseapp.com",
+  "projectId": "escritorio-advogado",
+  "storageBucket": "escritorio-advogado.appspot.com",
+  "messagingSenderId": "807805505128",
+  "appId": "1:807805505128:web:18569d9d764819f615f5dd",
+  "measurementId": "G-XMCLLKNNZR"
 }
