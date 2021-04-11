@@ -378,7 +378,7 @@ header.page-title hr {
   transition: all 0.3s ease-in-out;
 }
 .page aside.open {
-  height: calc(100vh - 158px);
+  height: calc(100vh - 240px);
 }
 .page aside.open header, .page aside.open section {
   display: flex;

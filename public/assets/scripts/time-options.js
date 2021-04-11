@@ -22,27 +22,33 @@ const renderTimeOptions = (context, timeOptions) => {
     })
 }
 
-const validateSubmitForm = context => {
-
+const validateSubmitForm = (context) => {
     const button = context.querySelector("[type=submit]")
 
-    context.querySelectorAll("[name=option]").forEach(input => {
+    const checkValue = () => {
+        if (context.querySelector("[name=option]:checked")) {
+            button.disabled = false
+        } else {
+            button.disabled = true
+        }
+    }
 
-        input.addEventListener("change", e => {
-            button.disabled = !context.querySelector("[name=option]:checked")        
+    window.addEventListener("load", (e) => checkValue())
+
+    context.querySelectorAll("[name=option]").forEach((input) => {
+        input.addEventListener("change", (e) => {
+            button.disabled = !context.querySelector("[name=option]:checked")
+            checkValue()
         })
-
     })
 
-    context.querySelector("form").addEventListener("submit", e => {
+    context.querySelector("form").addEventListener("submit", (e) => {
 
         if (!context.querySelector("[name=option]:checked")) {
             button.disabled = true
             e.preventDefault()
         }
-
     })
-
 }
 
 document.querySelectorAll('#time-options').forEach(page => {
@@ -58,9 +64,10 @@ document.querySelectorAll('#time-options').forEach(page => {
         })
 
         renderTimeOptions(page, renderData)
+        
+        validateSubmitForm(page)
     })
 
-    validateSubmitForm(page)
 
     const params = getQueryString()
     const title = page.querySelector('h3')
