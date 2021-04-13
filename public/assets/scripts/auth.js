@@ -42,7 +42,7 @@ if (authPage) {
 
                 const params = getQueryString()
 
-                if (params.mode === 'reset') {
+                if (params.mode === 'resetPassword') {
                     showAuthForm()
                 }else {
                     showAuthForm('login')
