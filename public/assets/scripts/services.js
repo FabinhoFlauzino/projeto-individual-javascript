@@ -1,5 +1,5 @@
 import firebase from './firebase-app'
-import { appendTemplate, formatCurrency, getQueryString, setFormValues } from './utils'
+import { appendTemplate, formatCurrency, getQueryString, onSnapshotError, setFormValues } from './utils'
 
 let serviceSummary = []
 
@@ -113,7 +113,9 @@ document.querySelectorAll('#schedules-services').forEach(page => {
         })
 
         renderServiceOptions(page, services)
-    })
+        renderServiceSummary(page, services)
+
+    }, onSnapshotError)
 
     const params = getQueryString()
 

@@ -101,3 +101,11 @@ export function formatCurrency(value) {
         currency: "BRL",
     })
 }
+
+export function onSnapshotError(error) {
+
+    const pathname = encodeURIComponent(window.location.pathname)
+    const search = encodeURIComponent(window.location.search)
+
+    window.location.href = `/auth.html?url=${pathname}${search}`
+}

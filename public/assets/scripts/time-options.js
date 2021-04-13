@@ -53,22 +53,27 @@ const validateSubmitForm = (context) => {
 
 document.querySelectorAll('#time-options').forEach(page => {
 
+    const auth = firebase.auth()
     const db = firebase.firestore()
 
-    db.collection('time-options').onSnapshot(snapshot => {
+    auth.onAuthStateChanged(user => {
 
-        const renderData = []
+        db.collection('time-options').onSnapshot(snapshot => {
 
-        snapshot.forEach(item => {
-            renderData.push(item.data())
-        })
+            const renderData = []
+    
+            snapshot.forEach(item => {
+                renderData.push(item.data())
+            })
+    
+            renderTimeOptions(page, renderData)
+            
+            validateSubmitForm(page)
+            
+        }, onSnapshotError)
 
-        renderTimeOptions(page, renderData)
-        
-        validateSubmitForm(page)
     })
-
-
+    
     const params = getQueryString()
     const title = page.querySelector('h3')
     const form = page.querySelector("form")
