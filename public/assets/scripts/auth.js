@@ -160,7 +160,7 @@ if (authPage) {
             })
     })
 
-    const formReset = document.querySelector('#forget')
+    const formReset = document.querySelector('#reset')
 
     formReset.addEventListener('submit', e => {
         e.preventDefault()
