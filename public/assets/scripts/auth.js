@@ -112,16 +112,16 @@ if (authPage) {
 
                 if (values.url) {
                     if (window.location.hostname === "localhost") {
-                        window.location.href = `http://localhost:8080${values.url}`;
+                        window.location.href = `http://localhost:8080${values.url}`
                     } else {
-                        window.location.href = `https://escritorio-advogado.web.app${values.url}`;
+                        window.location.href = `https://escritorio-advogado.web.app/${values.url}`
                     }
                 } else {
-                    window.location.href = "/";
+                    window.location.href = "/"
                 }
                 
             })
-            .catch(showAlertError(formAuthLogin));
+            .catch(showAlertError(formAuthLogin))
     })
 
     const formForget = document.querySelector('#forget')
@@ -164,30 +164,31 @@ if (authPage) {
             })
     })
 
-    const formReset = document.querySelector('#reset')
+    const formReset = document.querySelector("#reset")
 
-    formReset.addEventListener('submit', e => {
+    formReset.addEventListener("submit", e => {
         e.preventDefault()
 
-        const btnSubmit = formReset.querySelector('[type=submit]')
+        const btnSubmit = formReset.querySelector("[type=submit]")
 
         btnSubmit.disabled = true
         btnSubmit.innerHTML = "Redefinindo..."
 
-        const {oobCode} = getQueryString()
-        const {password} = getFormValues(formReset)
+        const { oobCode } = getQueryString()
+        const { password } = getFormValues(formReset)
 
         hideAlertError(formReset)
 
-        auth.verifyPasswordResetCode(oobcode)
+        auth.verifyPasswordResetCode(oobCode)
             .then(() => auth.confirmPasswordReset(oobCode, password))
             .then(() => {
-                window.location.href = '/'
+                hideAuthForms()
+                showAuthForm("login")
             })
             .catch(showAlertError(formReset))
             .finally(() => {
                 btnSubmit.disabled = false
-                btnSubmit.innerHTML = 'Redefinir'
+                btnSubmit.innerHTML = "Redefinir"
             })
     })
 }
