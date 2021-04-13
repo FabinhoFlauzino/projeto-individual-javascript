@@ -165,8 +165,6 @@ if (authPage) {
 
     const formReset = document.querySelector("#reset")
 
-    formReset.classList.remove('hide')
-
     formReset.addEventListener("submit", e => {
         e.preventDefault()
 
