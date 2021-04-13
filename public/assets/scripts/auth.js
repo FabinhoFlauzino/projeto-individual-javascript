@@ -136,13 +136,12 @@ if (authPage) {
         
         hideAlertError(formForget)
   
+        const values = getFormValues(formForget)
+
         message.style.dispaly = 'none'
 
         btnSubmit.disabled = true
         btnSubmit.innerHTML = "Enviando..."
-
-
-        const values = getFormValues(formForget)
 
         auth.sendPasswordResetEmail(values.email)
             .then(() => {
@@ -165,6 +164,8 @@ if (authPage) {
     })
 
     const formReset = document.querySelector("#reset")
+
+    formReset.classList.remove('hide')
 
     formReset.addEventListener("submit", e => {
         e.preventDefault()
