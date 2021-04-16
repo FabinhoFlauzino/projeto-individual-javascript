@@ -91,7 +91,7 @@ export function showAlertError(form) {
         const alertElement = form.querySelector(".alert.danger")
 
         alertElement.innerHTML = error.message
-        alertElement.style.display = "block"
+        alertElement.style.display = "flex"
     }
 }
 
@@ -108,4 +108,23 @@ export function onSnapshotError(error) {
     const search = encodeURIComponent(window.location.search)
 
     window.location.href = `/auth.html?url=${pathname}${search}`
+}
+
+export function getQueryStringFromJson(json) {
+
+    const params = []
+
+    Object.keys(json).forEach(key => {
+
+        params.push(`${key}=${json[key]}`)
+
+    })
+
+    return params.join('&')
+}
+
+export function showAlert(message, type) {
+    document.querySelector("#alert").style.display = "flex";
+    document.querySelector("#alert").classList.add(type);
+    document.querySelector("#alert").innerHTML = message;
 }

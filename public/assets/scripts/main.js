@@ -14,16 +14,18 @@ if (btnLogout) {
             .then(() => {
                 window.location.href = "/"
             })
-            .catch(err => console.error(err));
-    });
+            .catch(err => console.error(err))
+    })
 }
 
 if (menu) {
     auth.onAuthStateChanged(user => {
         if (user) {
             const userElement = menu.querySelector(".footer > div > div")
-            userElement.querySelector("strong").innerHTML = user.displayName;
-            userElement.querySelector("small").innerHTML = user.email;
+            userElement.querySelector("strong").innerHTML = user.displayName
+            userElement.querySelector("small").innerHTML = user.email
+            userElement.closest(".footer").querySelector("img").src = user.photoURL || "../../assets/images/default.png"
+            //userElement.closest(".footer").querySelector("img").src = user.photoURL || "../images/default.png"
             menu.classList.add("logged")
         } else {
             menu.classList.remove("logged")

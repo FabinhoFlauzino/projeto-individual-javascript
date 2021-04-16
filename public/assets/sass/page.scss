@@ -171,6 +171,16 @@ header {
             } 
         }
     }
+    &.dark {
+        > header {
+            background-color: var(--dark-3);
+        }
+        footer.fixed {
+            button[type=submit], a.black {
+                @include button-green;
+            } 
+        }
+    }
 }
 
 @media (min-width: 1200px) {

@@ -1,7 +1,8 @@
 import firebase from './firebase-app'
-import { appendTemplate, formatCurrency, getQueryString, onSnapshotError, setFormValues } from './utils'
+import { appendTemplate, formatCurrency, getFormValues, getQueryString, getQueryStringFromJson, onSnapshotError, setFormValues } from './utils'
 
 let serviceSummary = []
+let arrayValues = []
 
 const renderServiceOptions = (context, serviceOptions) => {
 
@@ -10,12 +11,12 @@ const renderServiceOptions = (context, serviceOptions) => {
     optionsEl.innerHTML = ''
 
     serviceOptions.forEach(item => {
-        
+
         const label = appendTemplate(
-            optionsEl, 
+            optionsEl,
             'label',
             `
-                <input type="checkbox" name="service" value="${item.id}" />
+                <input type="checkbox" name="service" id="id-${item.id}" value="${item.id}" />
                 <div class="square">
                     <div></div>
                 </div>
@@ -24,29 +25,38 @@ const renderServiceOptions = (context, serviceOptions) => {
                     <span class="description">${item.description}</span>
                     <span class="price">${formatCurrency(item.price)}</span>
                 </div>
-            `
+            `,
         )
-
+       
         label.querySelector('[type=checkbox]').addEventListener('change', e => {
 
-            const {checked, value} = e.target
+            const { checked, value } = e.target
 
             if (checked) {
 
-                const serviceSelected = serviceOptions.filter((option) => {
+                let name = label.querySelector('.name').innerHTML
+                let description = label.querySelector('.description').innerHTML
+                let price = label.querySelector('.price').innerHTML.replace("R$&nbsp;", "").replace(",", ".")
+                let values = {name:name, description: description, price:price}
+
+                arrayValues.push(values)
+ 
+                sessionStorage.setItem('values',JSON.stringify(arrayValues))
                 
-                    return (+option.id === +value) 
-    
+                const serviceSelected = serviceOptions.filter((option) => {
+                    
+                    return (+option.id === +value)
+
                 })[0]
 
                 serviceSummary.push(serviceSelected.id)
-    
+
             } else {
 
                 serviceSummary = serviceSummary.filter(id => {
 
                     return +id !== +value
-                }) 
+                })
             }
 
             renderServiceSummary(context, serviceOptions)
@@ -68,7 +78,7 @@ const renderServiceSummary = (context, serviceOptions) => {
         })[0]
     }).sort((a, b) => {
 
-        if(a.name > b.name) {
+        if (a.name > b.name) {
             return 1
         } else if (a.name < b.name) {
             return -1
@@ -79,7 +89,6 @@ const renderServiceSummary = (context, serviceOptions) => {
     })
 
     result.forEach(item => {
-
         appendTemplate(
             tbodyEl,
             'tr',
@@ -117,14 +126,26 @@ document.querySelectorAll('#schedules-services').forEach(page => {
 
     }, onSnapshotError)
 
+    const form = page.querySelector('form')
     const params = getQueryString()
 
-    setFormValues(page.querySelector('form'), params)
+    setFormValues(form, params)
 
     const btnAside = page.querySelector('#btn-summary-toggle')
 
     btnAside.addEventListener('click', () => {
         page.querySelector('aside').classList.toggle('open')
+    })
+
+    form.addEventListener('submit', e => {
+
+        e.preventDefault()
+
+        const values = getFormValues(form)
+
+        window.location.href = `/schedules-payment.html?${getQueryStringFromJson(values)}`
+
+        sessionStorage.setItem('price', document.querySelector('#schedules-services > aside > footer > div > span.total').innerHTML.replace("R$&nbsp;", "").replace(",", "."))
     })
 
 })

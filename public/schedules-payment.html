@@ -92,13 +92,14 @@
         </div>
     </header>
 
-    <section id="schedules-payment" class="page green">
+    <section id="schedules-payment" class="page dark">
         <header>
             <h1>Dados do Cartão de Crédito</h1>
         </header>
 
         <main>
-            <form action="schedules-payment.html">
+            <form action="schedules-address.html">
+
                 <input type="hidden" name="schedule_at" />
                 <input type="hidden" name="option" />
                 <input type="hidden" name="service" />
@@ -112,40 +113,25 @@
 
                         <div class="fields">
                             <div class="field">
-                                <input type="number" name="expiry" id="expiry" required />
+                                <input type="text" name="expiry" id="expiry" required />
                                 <label for="expiry">Validade</label>
                             </div>
 
                             <div class="field">
-                                <input type="number" name="cvv" id="cvv" required />
+                                <input type="text" name="cvv" id="cvv" required />
                                 <label for="cvv">CVV</label>
                             </div>
                         </div>
 
                         <div class="field">
-                            <input type="text" name="name" id="name" required />
-                            <label for="name">Nome</label>
-                        </div>
-
-                        <div class="field">
-                            <select name="bank" id="bank">
-                                <option value="1">Banco Itaú</option>
-                                <option value="2">Banco Bradesco</option>
-                            </select>
-                            <label for="bank">Banco Emissor</label>
+                            <input type="text" name="cardName" id="cardName" required />
+                            <label for="cardName">Nome</label>
                         </div>
 
                         <div class="field">
                             <select name="installments" id="installments" required>
-                                <option value="1">1x de R$ 400,00</option>
-                                <option value="2">2x de R$ 200,00</option>
                             </select>
                             <label for="installments">Parcela</label>
-                        </div>
-
-                        <div class="field">
-                            <input type="number" name="document" id="document" required />
-                            <label for="document">CPF</label>
                         </div>
 
                         <footer class="fixed">
@@ -280,10 +266,10 @@
                                     <g transform="translate(4292.083 -3734.497)">
                                         <path
                                             d="M590.213,409.912A20.6,20.6,0,0,1,569.527,430.6H213.285A20.6,20.6,0,0,1,192.6,409.912V204.785A20.6,20.6,0,0,1,213.285,184.1H569.527a20.6,20.6,0,0,1,20.685,20.685Z"
-                                            transform="translate(-192.6 -184.1)" fill="#f0f0f0" />
+                                            transform="translate(-192.6 -184.1)" fill="#1a1a1a" />
                                     </g>
                                     <g transform="translate(4292.657 -3709.215)">
-                                        <rect width="397.038" height="64.353" fill="#333" />
+                                        <rect width="397.038" height="64.353" fill="#CCC" />
                                     </g>
                                     <g transform="translate(4309.39 -3625.305)">
                                         <rect width="304.157" height="47.116" fill="#fff" />
@@ -356,12 +342,7 @@
 
             <section>
                 <table>
-                    <tbody>
-                        <tr>
-                            <td>Alinhamento</td>
-                            <td class="price">R$ 0,00</td>
-                        </tr>
-                    </tbody>
+                    <tbody></tbody>
                 </table>
             </section>
 

@@ -1,6 +1,6 @@
 #schedules-address {
     main {
-        margin-top: 20px;
+        margin-top: 60px;
         form {
             hr {
                 margin: 20px auto;
@@ -9,6 +9,7 @@
             }
             .btn-create {
                 @include button-green;
+                max-width: 200px;
             }
             .btn-update {
                 @include button-gray;
@@ -72,7 +73,7 @@
             form {
                 max-width: 600px;
                 .btn-create {
-                    width: max-content;
+                    width: 200px;
                 }
             }
         }

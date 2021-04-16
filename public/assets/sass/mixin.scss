@@ -91,3 +91,15 @@
         background-color: var(--blue-active);
     }
 }
+
+@mixin button-dark {
+    @include button;
+    background-color: var(--dark-3);
+    color: var(--white);
+    &:hover {
+        background-color: var(--dark-1);
+    }
+    &:active {
+        background-color: var(--dark-0);
+    }
+}

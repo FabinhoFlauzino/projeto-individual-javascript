@@ -2,6 +2,7 @@ form {
     flex-direction: column;
     width: 100%;
     padding: 0 var(--space);
+    margin-top: calc(var(--space) * 2);
     .fields {
         flex-direction: column;
     }

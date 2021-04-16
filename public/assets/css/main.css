@@ -44,6 +44,7 @@
   --black-75: #000000bf;
   --dark-0: #333;
   --dark-1: #000000BF;
+  --dark-3: #242424;
   --gray: #79756C;
   --gray-0: #707070;
   --gray-1: #7E7E7E;
@@ -146,6 +147,7 @@ form {
   flex-direction: column;
   width: 100%;
   padding: 0 var(--space);
+  margin-top: calc(var(--space) * 2);
 }
 form .fields {
   flex-direction: column;
@@ -602,6 +604,50 @@ header.page-title hr {
 .page.green footer.fixed button[type=submit]:active, .page.green footer.fixed a.black:active {
   background-color: var(--green-active);
 }
+.page.dark > header {
+  background-color: var(--dark-3);
+}
+.page.dark footer.fixed button[type=submit], .page.dark footer.fixed a.black {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  background: transparent;
+  color: var(--black);
+  background-color: var(--green);
+  color: var(--white);
+}
+.page.dark footer.fixed button[type=submit]:hover, .page.dark footer.fixed a.black:hover {
+  background-color: var(--black-10);
+}
+.page.dark footer.fixed button[type=submit]:active, .page.dark footer.fixed a.black:active {
+  background-color: var(--black-75);
+}
+.page.dark footer.fixed button[type=submit]:disabled, .page.dark footer.fixed a.black:disabled {
+  opacity: 0.5;
+  cursor: no-drop;
+  background-color: var(--gray-3);
+  color: var(--dark-0);
+}
+.page.dark footer.fixed button[type=submit]:disabled:hover, .page.dark footer.fixed button[type=submit]:disabled:active, .page.dark footer.fixed a.black:disabled:hover, .page.dark footer.fixed a.black:disabled:active {
+  background-color: var(--gray-3);
+  color: var(--dark-0);
+}
+.page.dark footer.fixed button[type=submit]:hover, .page.dark footer.fixed a.black:hover {
+  background-color: var(--green-hover);
+}
+.page.dark footer.fixed button[type=submit]:active, .page.dark footer.fixed a.black:active {
+  background-color: var(--green-active);
+}
 
 @media (min-width: 1200px) {
   header.page-title h1, header.page-title h2, header.page-title h3, header.page-title h4, header.page-title h5, header.page-title h6 {
@@ -805,7 +851,7 @@ header.page-title hr {
   min-width: 320px;
   width: 100%;
   height: 160px;
-  background-color: var(--black-10);
+  background-color: var(--dark-3);
   position: relative;
   z-index: 5;
 }
@@ -822,7 +868,7 @@ header.page-title hr {
   width: 300px;
   height: 100vh;
   padding-bottom: 50px;
-  background-color: var(--gray-7);
+  background-color: var(--dark-1);
   position: fixed;
   right: -300px;
   top: 0;
@@ -867,7 +913,7 @@ header.page-title hr {
 }
 #header .menu nav ul li a {
   text-decoration: none;
-  color: var(--white);
+  color: var(--gray-3);
 }
 #header .menu nav ul li.hide-guest, #header .menu nav ul li.divider {
   display: none;
@@ -996,6 +1042,7 @@ header.page-title hr {
 
   #header {
     height: 100px;
+    background-color: var(--dark-1);
   }
   #header .italy {
     top: 100px;
@@ -1474,7 +1521,9 @@ header.page-title hr {
   flex-direction: column;
 }
 #contact #map {
-  background-image: url("../images/mapa.png");
+  background-image: url("../images/undraw_Envelope_re_f5j4.png");
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 263px;
   width: 100%;
   margin-top: var(--space);
@@ -1530,7 +1579,7 @@ header.page-title hr {
   }
   #contact > section #map {
     margin-left: 0;
-    height: 570px;
+    height: 500px;
   }
   #contact .contacts {
     flex-direction: row;
@@ -1957,6 +2006,7 @@ header.page-title hr {
 
 #schedules-summary form {
   margin-top: var(--space);
+  margin-bottom: calc(var(--space) * 3);
 }
 
 #schedules-payment {
@@ -1993,6 +2043,7 @@ header.page-title hr {
 }
 #schedules-payment > main form {
   max-width: 100%;
+  margin-bottom: 60px;
 }
 #schedules-payment > main form .form-creditcard {
   margin-top: var(--space);
@@ -2010,7 +2061,7 @@ header.page-title hr {
 }
 #schedules-payment > main form .form-creditcard .form-card {
   position: absolute;
-  top: 32px;
+  top: 10px;
   width: 100%;
   left: 0;
   justify-content: center;
@@ -2034,6 +2085,73 @@ header.page-title hr {
 }
 #schedules-payment > main form .form-creditcard .form-card .faces .back {
   transform: rotateY(180deg);
+}
+#schedules-payment .lds-grid {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+#schedules-payment .lds-grid div {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #554d23;
+  animation: lds-grid 1.2s linear infinite;
+}
+#schedules-payment .lds-grid div:nth-child(1) {
+  top: 8px;
+  left: 8px;
+  animation-delay: 0s;
+}
+#schedules-payment .lds-grid div:nth-child(2) {
+  top: 8px;
+  left: 32px;
+  animation-delay: -0.4s;
+}
+#schedules-payment .lds-grid div:nth-child(3) {
+  top: 8px;
+  left: 56px;
+  animation-delay: -0.8s;
+}
+#schedules-payment .lds-grid div:nth-child(4) {
+  top: 32px;
+  left: 8px;
+  animation-delay: -0.4s;
+}
+#schedules-payment .lds-grid div:nth-child(5) {
+  top: 32px;
+  left: 32px;
+  animation-delay: -0.8s;
+}
+#schedules-payment .lds-grid div:nth-child(6) {
+  top: 32px;
+  left: 56px;
+  animation-delay: -1.2s;
+}
+#schedules-payment .lds-grid div:nth-child(7) {
+  top: 56px;
+  left: 8px;
+  animation-delay: -0.8s;
+}
+#schedules-payment .lds-grid div:nth-child(8) {
+  top: 56px;
+  left: 32px;
+  animation-delay: -1.2s;
+}
+#schedules-payment .lds-grid div:nth-child(9) {
+  top: 56px;
+  left: 56px;
+  animation-delay: -1.6s;
+}
+@keyframes lds-grid {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -2083,7 +2201,7 @@ header.page-title hr {
   }
 }
 #schedules-address main {
-  margin-top: 20px;
+  margin-top: 60px;
 }
 #schedules-address main form hr {
   margin: 20px auto;
@@ -2108,6 +2226,7 @@ header.page-title hr {
   color: var(--black);
   background-color: var(--green);
   color: var(--white);
+  max-width: 200px;
 }
 #schedules-address main form .btn-create:hover {
   background-color: var(--black-10);
@@ -2222,7 +2341,7 @@ header.page-title hr {
     max-width: 600px;
   }
   #schedules-address main form .btn-create {
-    width: max-content;
+    width: 200px;
   }
 }
 #schedules-complete main p {
