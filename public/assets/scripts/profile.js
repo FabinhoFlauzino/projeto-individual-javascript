@@ -16,7 +16,6 @@ document.querySelectorAll('#profile').forEach(page => {
 
             const formElement = page.querySelector('form')
             const nameElement = page.querySelector('#name')
-            console.log(nameElement)
             const emailElement = page.querySelector('#email')
             const birthElement = page.querySelector('#birth_at')
             const documentElement = page.querySelector('#document')
@@ -55,7 +54,7 @@ document.querySelectorAll('#profile').forEach(page => {
                         setTimeout(() => {
                             window.location.href = '/'
                         }, 1000);
-                    }).catch(error => console.log('Algo está errado'))
+                    }).catch(err => window.location.href = '404.html')
                 })
             }
 
@@ -83,7 +82,7 @@ document.querySelectorAll('#profile').forEach(page => {
                     if (phoneElement) {
                         phoneElement.value = doc.data().phone
                     }
-                })
+                }).catch(err => window.location.href = '404.html')
         } else {
             window.location.href = 'login.html'
         }

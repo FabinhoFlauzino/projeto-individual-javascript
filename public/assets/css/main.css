@@ -1730,6 +1730,7 @@ header.page-title hr {
 
 #schedules main > div {
   flex-direction: column;
+  margin-bottom: 40px;
 }
 #schedules main > div ul {
   margin: 0;
@@ -2472,7 +2473,7 @@ header.page-title hr {
 }
 @media (min-width: 1200px) {
   #error {
-    height: 40vw;
+    height: 48vw;
     align-self: center;
     padding: var(--space);
   }

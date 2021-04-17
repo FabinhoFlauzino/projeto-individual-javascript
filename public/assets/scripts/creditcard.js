@@ -9,8 +9,10 @@ const values = sessionStorage.getItem('values')
 const valuesObj = JSON.parse(values)
 const value = parseFloat(sessionStorage.getItem('price'))
 const scheduleAt = document.querySelector('[name=schedule_at]')
+const timeOptions = document.querySelector('[name=option]')
 
 document.querySelectorAll('#schedules-payment').forEach(page => {
+
 
     auth.onAuthStateChanged(user => {
 
@@ -31,6 +33,8 @@ document.querySelectorAll('#schedules-payment').forEach(page => {
             const svgNumber4 = page.querySelector('svg .number-4')
             const svgExpiry = page.querySelector('svg .expiry')
             const btnSubmit = page.querySelector('[type=submit]')
+
+            
 
             if (valuesObj) {
                 
@@ -107,7 +111,7 @@ document.querySelectorAll('#schedules-payment').forEach(page => {
                     YY: {
                         mask: IMask.MaskedRange,
                         from: 21,
-                        to: 30
+                        to: 35
                     },
                     MM: {
                         mask: IMask.MaskedRange,
@@ -231,6 +235,7 @@ const saveOrder = (values, value) => {
                 timestamp: Date.now() / 1000 | 0 + 100,
                 id: parseInt(orderID),
                 consultation_date: scheduleAt.value,
+                option: timeOptions.value,
                 item: values,
                 value: value,
                 cardName: cardName.value,

@@ -14,7 +14,7 @@ if (btnLogout) {
             .then(() => {
                 window.location.href = "/"
             })
-            .catch(err => console.error(err))
+            .catch(err => window.location.href = '404.html')
     })
 }
 

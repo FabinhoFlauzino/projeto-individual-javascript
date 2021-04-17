@@ -78,7 +78,7 @@ document.querySelectorAll('#time-options').forEach(page => {
     const title = page.querySelector('h3')
     const form = page.querySelector("form")
     const scheduleAt = parse(params.schedule_at, "yyyy-MM-dd", new Date())
-
+    
     setFormValues(form, params)
 
     title.innerHTML = format(scheduleAt, "EEEE, d 'de' MMMM 'de' yyyy", {locale: ptBR})

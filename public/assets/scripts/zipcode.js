@@ -52,6 +52,7 @@ document.querySelectorAll(".zipcode").forEach(zipode => {
                     })
                     numberElement.focus()
                 })
+                .catch(err => window.location.href = '404.html')
                 .finally(() => {
                     btnZipcodeElement.disabled = false;
                     btnZipcodeElement.innerHTML = "Buscar";
@@ -90,7 +91,7 @@ document.querySelectorAll(".zipcode").forEach(zipode => {
                         setTimeout(() => {
                             window.location.href = '/'
                         }, 1000);
-                    }).catch(error => console.log('Algo está errado', error))
+                    }).catch(err => window.location.href = '404.html')
                     
                 })
             }
@@ -126,7 +127,7 @@ document.querySelectorAll(".zipcode").forEach(zipode => {
                     if (stateElement) {
                         stateElement.value = doc.data().state
                     }
-                })
+                }).catch(err => window.location.href = '404.html')
         
         } else {
             window.location.href = 'login.html'
