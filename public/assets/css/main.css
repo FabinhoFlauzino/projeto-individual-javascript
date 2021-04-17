@@ -159,7 +159,7 @@ form .field {
   margin-bottom: var(--space);
 }
 form .field label {
-  color: var(--gray-3);
+  color: var(--gray);
   font-size: 14px;
   position: absolute;
   top: 10px;
