@@ -130,7 +130,7 @@ document.querySelectorAll(".zipcode").forEach(zipode => {
                 }).catch(err => window.location.href = '404.html')
         
         } else {
-            window.location.href = 'login.html'
+            window.location.href = 'auth.html'
         }
     })
 

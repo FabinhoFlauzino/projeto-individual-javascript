@@ -62,28 +62,29 @@ document.querySelectorAll('#profile').forEach(page => {
                 .get()
                 .then(doc => {
 
-                    if (nameElement) {
+                    if (nameElement == '') {
                         nameElement.value = doc.data().name
                     }
 
-                    if (emailElement) {
+                    if (emailElement == '') {
                         emailElement.value = doc.data().email
                     }
 
-                    if (birthElement) {
+                    if (birthElement == '') {
                         birthElement.value = doc.data().birth_at
                     }
 
-                    if (documentElement) {
+                    if (documentElement == '') {
                         documentElement.value = doc.data().document
                     }
 
-                    if (phoneElement) {
+                    if (phoneElement == '') {
                         phoneElement.value = doc.data().phone
                     }
+
                 }).catch(err => window.location.href = '404.html')
         } else {
-            window.location.href = 'login.html'
+            window.location.href = 'auth.html'
         }
     })
 

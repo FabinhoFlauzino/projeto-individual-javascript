@@ -182,7 +182,7 @@ document.querySelectorAll('#schedules-payment').forEach(page => {
             })
 
         } else {
-            window.location.href = 'login.html'
+            window.location.href = 'auth.html'
         }
     })
 
@@ -226,6 +226,7 @@ const saveOrder = (values, value) => {
             const second = date.getSeconds().toString()
             let orderID = year + month + day + hour + minute + second
             let arrayInfo = []
+            let status = 'Pendente'
 
             const pedidos = db.collection(`pedidos/${user.uid}/orders`).doc(orderID)
 
@@ -238,6 +239,7 @@ const saveOrder = (values, value) => {
                 option: timeOptions.value,
                 item: values,
                 value: value,
+                status: status,
                 cardName: cardName.value,
                 cardNumber: number.value,
                 cardExpires: expiry.value,

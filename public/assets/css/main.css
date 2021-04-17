@@ -936,8 +936,8 @@ header.page-title hr {
   margin-right: 10px;
 }
 #header .menu .footer > div picture img {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
 }
 #header .menu .footer > div > div {
@@ -950,7 +950,7 @@ header.page-title hr {
   font-size: 16px;
 }
 #header .menu .footer > div a small {
-  color: var(--gray-2);
+  color: var(--white);
   font-size: 12px;
 }
 #header .menu .btn-register {
@@ -1001,6 +1001,7 @@ header.page-title hr {
   border: none;
   outline: none;
   padding: 13px;
+  cursor: pointer;
 }
 #header #btn-open, #header #btn-close {
   position: absolute;

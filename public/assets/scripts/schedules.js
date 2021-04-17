@@ -41,7 +41,7 @@ const renderSchedules = (context, schedulesOptions) => {
                         </div>
                         <div>
                             <label>Status</label>
-                            <span>Confirmado</span>
+                            <span>${item.status}</span>
                         </div>
                         <div>
                             <label>Valor</label>
