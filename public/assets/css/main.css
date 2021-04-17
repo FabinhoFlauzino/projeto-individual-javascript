@@ -2045,6 +2045,24 @@ header.page-title hr {
   max-width: 100%;
   margin-bottom: 60px;
 }
+#schedules-payment > main form div#alert.error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  padding: var(--space);
+  border-radius: var(--space);
+  margin: var(--space) 0;
+  display: none;
+}
+#schedules-payment > main form div#alert.success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  padding: var(--space);
+  border-radius: var(--space);
+  margin: var(--space) 0;
+  display: none;
+}
 #schedules-payment > main form .form-creditcard {
   margin-top: var(--space);
 }

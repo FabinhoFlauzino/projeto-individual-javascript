@@ -128,3 +128,8 @@ export function showAlert(message, type) {
     document.querySelector("#alert").classList.add(type);
     document.querySelector("#alert").innerHTML = message;
 }
+
+export function hideAlert(type) {
+    document.querySelector("#alert").style.display = "none";
+    document.querySelector("#alert").classList.remove(type);
+}

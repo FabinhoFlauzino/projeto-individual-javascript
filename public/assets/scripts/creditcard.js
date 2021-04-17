@@ -1,5 +1,5 @@
 import IMask from 'imask'
-import { getQueryString, setFormValues, formatCurrency, appendTemplate } from './utils'
+import { getQueryString, setFormValues, formatCurrency, appendTemplate, showAlert, hideAlert } from './utils'
 import firebase from './firebase-app'
 
 const db = firebase.firestore()
@@ -31,8 +31,6 @@ document.querySelectorAll('#schedules-payment').forEach(page => {
             const svgNumber4 = page.querySelector('svg .number-4')
             const svgExpiry = page.querySelector('svg .expiry')
             const btnSubmit = page.querySelector('[type=submit]')
-
-            console.log(scheduleAt);
 
             if (valuesObj) {
                 
@@ -143,13 +141,35 @@ document.querySelectorAll('#schedules-payment').forEach(page => {
 
                     e.preventDefault()
 
-                    paymentProcess('Aguarde um instante, Falta Pouco...')
+                    let status = 1;
 
-                    document.querySelector('aside').innerHTML = ''
+                    if (number.value.length < 19) {
+                        showAlert("O número do cartão de crédito está incorreto.", "error");
+                        number.focus();
+                        status = 1
+                    } else if (expiry.value.length < 4) {
+                        showAlert("A válidade do cartão está incorreta.", "error");
+                        expiry.focus();
+                        status = 1
+                    } else if (inputCvv.value.length < 3) {
+                        showAlert("O código de segurança do cartão está incorreto.", "error");
+                        inputCvv.focus();
+                        status = 1
+                    } else if (cardName.value == '') {
+                        showAlert("Você precisa digitar o nome que está no cartão nome.", "error");
+                        cardName.focus();
+                        status = 1
+                    } else {
+                        status = 0;
+                        hideAlert("error");
+                    }
 
-                    saveOrder(values, value)
-
-
+                    if (!status) {
+                        btnSubmit.disabled = true;
+                        btnSubmit.innerHTML = "Aguarde..."
+                        paymentProcess('Por favor, aguarde...');
+                        saveOrder(values, value);
+                    } 
                 })
             }
 
@@ -193,10 +213,6 @@ const saveOrder = (values, value) => {
             values = JSON.parse(sessionStorage.getItem('values'))
             value = parseFloat(sessionStorage.getItem('price'))
 
-            console.log(valuesObj)
-            console.log(values)
-            console.log(value)
-
             const date = new Date()
             const day = date.getDate().toString()
             const month = date.getMonth().toString()
@@ -205,6 +221,7 @@ const saveOrder = (values, value) => {
             const minute = date.getMinutes().toString()
             const second = date.getSeconds().toString()
             let orderID = year + month + day + hour + minute + second
+            let arrayInfo = []
 
             const pedidos = db.collection(`pedidos/${user.uid}/orders`).doc(orderID)
 
@@ -219,13 +236,24 @@ const saveOrder = (values, value) => {
                 cardName: cardName.value,
                 cardNumber: number.value,
                 cardExpires: expiry.value,
-                inputCvv: cvv.value
+                inputCvv: cvv.value,
+                installments: installments.value
             })
 
-            paymentProcess('Processando Pagamento.....')
+            let cardInfo = {
+                cardName: cardName.value,
+                cardNumber: number.value,
+                cardExpires: expiry.value,
+                inputCvv: cvv.value,
+                installments: installments.value
+            }
+            
+            arrayInfo.push(cardInfo)
+
+            sessionStorage.setItem('info',JSON.stringify(arrayInfo))
 
             setTimeout(() => {
-                window.location.href = 'schedules-address.html'
+                window.location.href = 'schedules-summary.html'
             }, 3000)
 
         }

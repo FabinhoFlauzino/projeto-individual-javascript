@@ -100,6 +100,8 @@
         <main>
             <form action="schedules-address.html">
 
+                <div id="alert"></div>
+
                 <input type="hidden" name="schedule_at" />
                 <input type="hidden" name="option" />
                 <input type="hidden" name="service" />
@@ -107,13 +109,13 @@
                 <div class="form-creditcard">
                     <div class="form-fields">
                         <div class="field">
-                            <input type="text" name="number" id="number" required />
+                            <input type="text" name="number" id="number" required minlength="19"/>
                             <label for="number">Número do Cartão</label>
                         </div>
 
                         <div class="fields">
                             <div class="field">
-                                <input type="text" name="expiry" id="expiry" required />
+                                <input type="text" name="expiry" id="expiry" required minlength="4"/>
                                 <label for="expiry">Validade</label>
                             </div>
 
@@ -129,8 +131,7 @@
                         </div>
 
                         <div class="field">
-                            <select name="installments" id="installments" required>
-                            </select>
+                            <select name="installments" id="installments" required></select>
                             <label for="installments">Parcela</label>
                         </div>
 
