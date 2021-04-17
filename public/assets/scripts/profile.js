@@ -1,6 +1,5 @@
 import IMask from 'imask'
 import firebase from './firebase-app'
-import { getFormValues } from './utils'
 
 document.querySelectorAll('#profile').forEach(page => {
 

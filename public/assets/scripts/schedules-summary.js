@@ -1,5 +1,5 @@
 import firebase from './firebase-app'
-import { appendTemplate, formatCurrency, getFormValues, getQueryString, setFormValues } from './utils'
+import { appendTemplate, formatCurrency } from './utils'
 
 const values = sessionStorage.getItem('values')
 const valuesObj = JSON.parse(values)

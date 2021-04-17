@@ -177,8 +177,9 @@
         <section id="contact">
             <h2>Entre em Contato</h2>
 
-            <section>
+            <section class="email">
                 <form>
+
                     <header class="page-title">
                         <h2>Formulário</h2>
                         <hr />
@@ -189,20 +190,26 @@
                         conosco.
                     </p>
 
-                    <div class="alert danger">Preencha todos os campos</div>
+                    <div id="alert"></div>
 
                     <div class="fields">
                         <div class="field">
-                            <input type="text" name="name" id="name" />
+                            <input type="text" name="name" id="name" required/>
                             <label for="name">Nome Completo</label>
                         </div>
 
                         <div class="field">
-                            <input type="email" name="email" id="email" />
-                            <label for="email">E-mail</label>
+                            <input type="text" name="phone" id="phone" required/>
+                            <label for="phone">Telefone (WhatsApp)</label>
                         </div>
+
                     </div>
 
+                    <div class="field">
+                        <input type="email" name="email" id="email" required/>
+                        <label for="email">E-mail</label>
+                    </div>
+                    
                     <div class="field">
                         <textarea name="message" id="message"></textarea>
                         <label for="message">Mensagem</label>
