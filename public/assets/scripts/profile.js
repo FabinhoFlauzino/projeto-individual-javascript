@@ -42,11 +42,11 @@ document.querySelectorAll('#profile').forEach(page => {
 
                     perfil.set({
 
-                        "name": nameElement.value,
-                        "email": emailElement.value,
-                        "birth_at": birthElement.value,
-                        "document": documentElement.value,
-                        "phone": phoneElement.value,
+                        name: nameElement.value,
+                        email: emailElement.value,
+                        birth_at: birthElement.value,
+                        document: documentElement.value,
+                        phone: phoneElement.value,
 
                     }).then(() => {
                         btnSuccess.classList.add('open')
@@ -57,28 +57,30 @@ document.querySelectorAll('#profile').forEach(page => {
                 })
             }
 
+            
+
             db.collection('perfil')
                 .doc(userId)
                 .get()
                 .then(doc => {
-
-                    if (nameElement == '') {
+                    console.log(doc.data().name);
+                    if (nameElement || nameElement == '') {
                         nameElement.value = doc.data().name
                     }
 
-                    if (emailElement == '') {
+                    if (emailElement || emailElement == '') {
                         emailElement.value = doc.data().email
                     }
 
-                    if (birthElement == '') {
+                    if (birthElement || birthElement == '') {
                         birthElement.value = doc.data().birth_at
                     }
 
-                    if (documentElement == '') {
+                    if (documentElement || documentElement == '') {
                         documentElement.value = doc.data().document
                     }
 
-                    if (phoneElement == '') {
+                    if (phoneElement || phoneElement == '') {
                         phoneElement.value = doc.data().phone
                     }
 
