@@ -105,6 +105,10 @@
                     color: var(--dark-0);
                     text-decoration: none;
                     font-size: 14px;
+                    strong {
+                        color: var(--white);
+                        font-size: 12px;
+                    }
                     small {
                         color: var(--white);
                         font-size: 12px;
