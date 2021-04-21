@@ -155,11 +155,11 @@ document.querySelectorAll('#schedules-payment').forEach(page => {
                         showAlert("A válidade do cartão está incorreta.", "error");
                         expiry.focus();
                         status = 1
-                    } else if (inputCvv.value.length < 3) {
+                    } else if (inputCvv.value.length <= 2) {
                         showAlert("O código de segurança do cartão está incorreto.", "error");
                         inputCvv.focus();
                         status = 1
-                    } else if (cardName.value == '') {
+                    } else if (cardName.value == '' || cardName.value < 3) {
                         showAlert("Você precisa digitar o nome que está no cartão nome.", "error");
                         cardName.focus();
                         status = 1
