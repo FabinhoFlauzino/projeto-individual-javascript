@@ -53,7 +53,7 @@ document.querySelectorAll('#profile').forEach(page => {
                         setTimeout(() => {
                             window.location.href = '/'
                         }, 1000);
-                    }).catch(err => window.location.href = '404.html')
+                    })
                 })
             }
 
@@ -84,7 +84,7 @@ document.querySelectorAll('#profile').forEach(page => {
                         phoneElement.value = doc.data().phone
                     }
 
-                }).catch(err => window.location.href = '404.html')
+                })
         } else {
             window.location.href = 'auth.html'
         }
